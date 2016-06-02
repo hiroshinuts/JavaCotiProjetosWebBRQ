@@ -1,0 +1,6 @@
+INDEX VERSION 1.3+C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1519502586.index
+1307234489.index
+607662100.index
+923152665.index
+545072474.index
