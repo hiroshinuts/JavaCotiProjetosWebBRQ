@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<title>Projeto JSF Hibernate</title>
+	</h:head>
+
+	<h:body>
+		
+		<p:panel header="Cadastro de Funcionários">
+			<h:outputText value="Para cadastrar um funcionario, informe os dados abaixo:"/>
+			<p:separator/>	
+			
+			<h:form id="formulario">
+			
+				<h:panelGrid columns="2">
+					
+					<p:outputLabel value="Nome do Funcionario:" for="nome"/>
+					<p:inputText id="nome" required="true"
+						requiredMessage="Por favor, informe o nome do funcionário."
+						value="#{mbfunc.funcionario.nome}"/>
+					
+					<p:outputLabel value="Salário:" for="salario"/>
+					<p:inputText id="salario" required="true"
+						requiredMessage="Por favor, informe o salário do funcionário."
+						value="#{mbfunc.funcionario.salario}"/>
+					
+					<p:outputLabel value="Data de Admissão:" for="dataadmissao"/>
+					<p:calendar id="dataadmissao" required="true"
+						requiredMessage="Por favor, informe a data de admissão do funcionário."
+						value="#{mbfunc.funcionario.dataAdmissao}"/>
+					
+				</h:panelGrid>
+				
+				<p:commandButton value="Cadastrar Funcionário"
+					ajax="true" update=":formulario, :formconsulta"
+					action="#{mbfunc.cadastrar}"/>
+					
+				<p:messages/>
+				<p:growl/>
+			
+			</h:form>
+			
+			<p:separator/>
+			
+			<h:form id="formconsulta">
+			
+				<h:outputText value="Relação de Funcionários cadastrados:"/>
+				
+				<p:dataTable paginator="true" rows="5" emptyMessage="Não há registros"
+					value="#{mbfunc.listagemFuncionarios}" var="f">
+				
+					<f:facet name="header">
+						<h:outputText value="Consulta de Funcionários"/>
+					</f:facet>
+					
+					<p:column headerText="Código">	
+						<h:outputText value="#{f.idFuncionario}"/>				
+					</p:column>
+					
+					<p:column headerText="Nome do Funcionario" 
+						filterBy="#{f.nome}" filterMatchMode="startsWith">	
+						<h:outputText value="#{f.nome}"/>						
+					</p:column>
+					
+					<p:column headerText="Salário">		
+						<h:outputText value="#{f.salario}"/>					
+					</p:column>
+					
+					<p:column headerText="Data de Admissão">
+						<h:outputText value="#{f.dataAdmissao}"/>							
+					</p:column>
+					
+				</p:dataTable>
+			
+			</h:form>
+			
+		</p:panel>
+		
+	</h:body>
+
+</html>
+
+
+
+
+

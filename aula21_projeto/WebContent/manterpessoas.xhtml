@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui" >
+
+	<h:head>
+		<title>Projeto</title>
+	</h:head>
+
+	<h:body>
+	
+		<p:panel header="Cadastro de Pessoas">
+			
+			<h:outputText value="Para cadastrar uma pessoa, informe os dados abaixo:"/>
+			
+			<h:form id="formcadastro">
+			
+				<h:panelGrid columns="2">
+					
+					<p:outputLabel value="Nome da Pessoa:" for="nome"/>
+					<p:inputText id="nome" required="true"
+						requiredMessage="Por favor, informe o nome da pessoa."
+						value="#{mbpessoa.pessoa.nome}" />
+						
+					<p:outputLabel value="Endereço de Email:" for="email"/>
+					<p:inputText id="email" required="true"
+						requiredMessage="Por favor, informe o email da pessoa."
+						value="#{mbpessoa.pessoa.email}" />
+					
+					<p:commandButton value="Cadastrar Pessoa" ajax="true"
+						update=":formcadastro" action="#{mbpessoa.cadastrar}"/>
+					
+				</h:panelGrid>
+				
+				<div>
+					<p:messages/>
+					<p:growl/>
+				</div>
+			
+			</h:form>
+			
+		</p:panel>
+		
+		<p:panel header="Consulta de Pessoas">
+		
+			<h:outputText value="Listagem de pessoas cadastradas:"/>
+			<p:separator/>
+			
+			<h:form id="formconsulta">
+			
+				<p:dataTable paginator="true" rows="10" emptyMessage="Não há registros.">
+					
+					<p:column headerText="Código">
+					</p:column>
+					
+					<p:column headerText="Nome da Pessoa">
+					</p:column>
+					
+					<p:column headerText="Endereço de Email">
+					</p:column>
+					
+					<p:column headerText="Operações">
+						<p:commandButton value="Excluir" ajax="true" update=":formconsulta"/>
+					</p:column>
+					
+				</p:dataTable>
+			
+			</h:form>
+		
+		</p:panel>
+	
+	</h:body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

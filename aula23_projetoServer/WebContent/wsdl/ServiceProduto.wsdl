@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://services.brq.com.br" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://services.brq.com.br" xmlns:intf="http://services.brq.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://services.brq.com.br" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="cadastrarProduto">
+    <complexType>
+     <sequence>
+      <element name="nome" type="xsd:string"/>
+      <element name="preco" type="xsd:double"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cadastrarProdutoResponse">
+    <complexType>
+     <sequence>
+      <element name="cadastrarProdutoReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="cadastrarProdutoResponse">
+
+      <wsdl:part element="impl:cadastrarProdutoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cadastrarProdutoRequest">
+
+      <wsdl:part element="impl:cadastrarProduto" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ServiceProduto">
+
+      <wsdl:operation name="cadastrarProduto">
+
+         <wsdl:input message="impl:cadastrarProdutoRequest" name="cadastrarProdutoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cadastrarProdutoResponse" name="cadastrarProdutoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ServiceProdutoSoapBinding" type="impl:ServiceProduto">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="cadastrarProduto">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cadastrarProdutoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cadastrarProdutoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ServiceProdutoService">
+
+      <wsdl:port binding="impl:ServiceProdutoSoapBinding" name="ServiceProduto">
+
+         <wsdlsoap:address location="http://localhost:8082/aula23_projetoServer/services/ServiceProduto"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

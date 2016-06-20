@@ -1,0 +1,23 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<!--  mapear todas as ações de cliente no sistema  -->
+	<package name="cliente" extends="struts-default">
+
+		<!-- ação de cadastro de cliente -->
+		<action name="cadastrar" method="cadastrar"
+				class="br.com.brq.control.ControleCliente">
+		
+			<!-- redirecionamento -->
+			<result name="success">/cadastro.jsp</result>
+		
+		</action>
+
+	</package>
+
+</struts>

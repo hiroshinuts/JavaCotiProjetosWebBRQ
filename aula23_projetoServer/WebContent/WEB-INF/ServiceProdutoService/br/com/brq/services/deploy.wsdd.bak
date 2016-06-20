@@ -1,0 +1,30 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ServiceProdutoService WSDL service -->
+
+  <service name="ServiceProduto" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://services.brq.com.br"/>
+      <parameter name="wsdlServiceElement" value="ServiceProdutoService"/>
+      <parameter name="schemaQualified" value="http://services.brq.com.br"/>
+      <parameter name="wsdlServicePort" value="ServiceProduto"/>
+      <parameter name="className" value="br.com.brq.services.ServiceProdutoSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="ServiceProduto"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="cadastrarProduto" qname="operNS:cadastrarProduto" xmlns:operNS="http://services.brq.com.br" returnQName="retNS:cadastrarProdutoReturn" xmlns:retNS="http://services.brq.com.br" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:nome" xmlns:pns="http://services.brq.com.br" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:preco" xmlns:pns="http://services.brq.com.br" type="tns:double" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="cadastrarProduto"/>
+
+  </service>
+</deployment>

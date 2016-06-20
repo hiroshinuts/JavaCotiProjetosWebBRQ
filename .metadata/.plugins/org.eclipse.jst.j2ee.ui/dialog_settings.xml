@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<list key="J2EE_IMPORT_null">
-		<item value="C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\aula13_projeto.war"/>
-		<item value="C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\aula12_projeto.war"/>
-		<item value="C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\aula09_projeto-10.war"/>
-		<item value="C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\aula09_projeto.war"/>
-		<item value="C:\Users\Hiro\Desktop\JavaCoti Web - BRQ - Aulas Web - Projetos\aula08_projeto.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula23_projetoServer.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula23_projetoClient.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula22_projeto.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula21_projeto.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula19_projeto.war"/>
+		<item value="C:\Users\Hiro\Desktop\JavaCotiWeb-BRQ-Aulas Web-Projetos\aula18_projeto.war"/>
 	</list>
 	<list key="MRU_RUNTIME_STORE">
 		<item value="NULL_RUNTIME"/>

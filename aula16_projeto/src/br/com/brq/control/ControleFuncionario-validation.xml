@@ -1,0 +1,82 @@
+  <!DOCTYPE validators PUBLIC   
+        "-//OpenSymphony Group//XWork Validator 1.0.2//EN"   
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+	<!-- Arquivo para mapear as validações do ControleFuncionario -->
+	<!-- iremos validar o atributo 'funcionario' -->
+	
+	<!-- Validar o nome do funcionario -->
+	<field name="funcionario.nome">
+	
+		<!-- campo obrigatorio -->
+		<field-validator type="requiredstring">
+			<message>Por favor, informe o nome do Funcionario.</message>
+		</field-validator>
+		
+		<!-- expressao regular -->
+		<field-validator type="regex">
+			<param name="expression">^[A-Za-zÀ-Üà-ü\s]{3,50}$</param>
+			<message>Erro. Informe um nome valido para o Funcionario.</message>
+		</field-validator>		
+		
+	</field>
+	
+	
+	<!-- Validar o email do funcionario -->
+	<field name="funcionario.email">
+	
+		<!-- campo obrigatorio -->
+		<field-validator type="requiredstring">
+			<message>Por favor, informe o email do Funcionario.</message>
+		</field-validator>
+		
+		<!-- tipo email -->
+		<field-validator type="email">
+			<message>Erro. Informe um email valido para o Funcionario.</message>
+		</field-validator>		
+		
+	</field>
+	
+	
+	<!-- Validar o salario do funcionario -->
+	<field name="funcionario.salario">
+	
+		<!-- campo obrigatorio -->
+		<field-validator type="required">
+			<message>Por favor, informe o salario do Funcionario.</message>
+		</field-validator>
+		
+		<!-- intervalo -->
+		<field-validator type="double">
+			<param name="minInclusive">890.0</param>
+			<param name="maxInclusive">10000.0</param>
+			<message>Por favor, informe um salario entre ${minInclusive} e ${maxInclusive}</message>
+		</field-validator>
+		
+	</field>
+	
+	
+	<!-- Validar a funcao do funcionario -->
+	<field name="funcionario.funcao">
+	
+		<!-- campo obrigatorio -->
+		<field-validator type="requiredstring">
+			<message>Por favor, informe a função do Funcionario.</message>
+		</field-validator>
+		
+		<!-- expressao regular -->
+		<field-validator type="regex">
+			<param name="expression">^[A-Za-zÀ-Üà-ü\s]{3,100}$</param>
+			<message>Erro. Informe uma função valida para o Funcionario.</message>
+		</field-validator>		
+		
+	</field>
+
+</validators>  
+
+
+
+
+
